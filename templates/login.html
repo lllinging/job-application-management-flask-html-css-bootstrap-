@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+                        {% if request.args.get('success') == '1' %}
+    <div class="alert alert-success mt-4">
+        Registration successful! Please log in.
+    </div>
+{% endif %}
+
+    <h2 class="text-center mt-5"> Welcome To Job Management</h2>
+    <div class="container mt-5">
+        <div class="row bg-body-secondary mx-auto" style="width: 600px; height: 400px;">
+                <div class="col-md-6 offset-md-3">
+                    <form  class="pt-5" method="POST" action="/login/submit">
+                        <div class="form-group">
+                            <label for="email_address" class="form-label">Email Address:</label>
+                            <input type="text" name="email_address" id="email_address" class="form-control">
+                        </div>
+                        <div class="form-group pt-2">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group d-grid mt-4">
+                            <button type="submit"  class="btn btn-primary">SIGN IN</button>
+                        </div>
+                        <div class="d-flex justify-content-center pt-3">
+                            <div class="me-2">Not a member? </div>
+                            <a href="/register">Register</a>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

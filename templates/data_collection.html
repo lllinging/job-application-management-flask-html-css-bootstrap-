@@ -1,0 +1,52 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <title>Data Collection</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Data from web</h1>#}
+{##}
+{#    <!-- 在视图页面上添加链接按钮 -->#}
+{#    <a href="{{ url_for('view_jobs') }}">Go to My List</a><br>#}
+{##}
+{#    <a href="{{ url_for('generate_jobs') }}">Get some new jobs</a><br>#}
+{##}
+{#    <a href="{{ url_for('clear_data') }}">Clear All Data</a>#}
+{##}
+{#    <table border="1">#}
+{#        <tr>#}
+{#            <th>Job Title</th>#}
+{#            <th>Company Name</th>#}
+{#            <th>Location</th>#}
+{#            <th>Contact</th>#}
+{#            <th>Job URL</th>#}
+{#            <th>Actions</th>#}
+{#        </tr>#}
+{#        {% for data in data_collection.items %}#}
+{#        <tr>#}
+{#            <td>{{ data.JobTitle }}</td>#}
+{#            <td>{{ data.CompanyName }}</td>#}
+{#            <td>{{ data.Location }}</td>#}
+{#            <td>{{ data.Contact }}</td>#}
+{#            <td>{{ data.JobUrl }}</td>#}
+{#            <td>#}
+{#                <a href="{{ url_for('add_to_my_list', id=data.id) }}">Add</a>#}
+{#            <td>#}
+{##}
+{##}
+{#        </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{##}
+{##}
+{#    <div class="pagination">#}
+{#        <span class="disabled">{{ data_collection.page }}</span>#}
+{#        <a href="{{ url_for('data_collection', page=data_collection.prev_num) }}">Previous</a>#}
+{#        <a href="{{ url_for('data_collection', page=1) }}">First</a>#}
+{#        <a href="{{ url_for('data_collection', page=data_collection.next_num) }}">Next</a>#}
+{#        <a href="{{ url_for('data_collection', page=data_collection.pages) }}">Last</a>#}
+{#    </div>#}
+{##}
+{##}
+{#</body>#}
+{#</html>#}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .font_size{
+            font-size: 12px;
+        }
+        .navbar-nav li a:hover{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex mt-3">
+        <h2 class="text-center mx-auto">Job Management</h2>
+        <form action="/logout" method="post" class="d-flex align-items-center">
+            <div class="me-2">Hi, {{ g.user }}</div>
+            <div><button type="submit" class="btn btn-outline-dark font_size me-3">Log Out</button></div>
+        </form>
+    </div>
+<header>
+    <nav class="navbar navbar-expand-md bg-light navbar-light fixed top">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <i class="bi bi-pencil-square" style="font-size:25px"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover" href="/view">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/scraped_info">Scraped information</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  href="#">Job management</a>
+                    <ul class="dropdown-menu"> 
+                        <li><a class="dropdown-item" href="/view">View jobs</a></li>
+                        <li><a class="dropdown-item" href="/add">Add jobs</a></li>
+                        <li><a class="dropdown-item" href="/edit_jobs">Edit jobs</a></li>
+                        <li><a class="dropdown-item" href="/delete">Remove jobs</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="navbar-nav">
+                <form class="navbar-form" action="/search" method="GET">
+                    <div class="row">
+                        <div class="col-sm-8 position-relative">
+                            <label>
+                                <input type="text" class="form-control ps-4" placeholder="KeyWords" name="keyword">
+                                <i class="bi bi-search search" style="position: absolute; left: 20px; right: 5px; top: 8px"></i>
+                            </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-outline-dark">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </nav>
+</header>
+{% block content %}{% endblock %}
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

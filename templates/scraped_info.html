@@ -1,0 +1,54 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Scraped information</title>#}
+{#</head>#}
+{#<body>#}
+{#{% block content %}#}
+{#    <div class="container mt-4">#}
+{#        <table class="table table-hover">#}
+{#            <thead>#}
+{#                <tr class="col-md-12">#}
+{#                    <th>Title</th>#}
+{#                    <th>Company Name</th>#}
+{#                    <th>Location</th>#}
+{#                    <th>Contact</th>#}
+{#                    <th>Job Link</th>#}
+{#                    <th>Job Status</th>#}
+{#                    <th>Actions</th>#}
+{#                </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#                {% for application in applications %}#}
+{#                <tr>#}
+{#                    <td>{{ application.title }}</td>#}
+{#                    <td>{{ application.company_name }}</td>#}
+{#                    <td>{{ application.location }}</td>#}
+{#                    <td>{{ application.contact }}</td>#}
+{#                    <td><a href="{{ application.link }}" target="_blank">Website Link</a></td>#}
+{#                    <td>{{ application.status }}</td>#}
+{#                    <td>#}
+{#                    <a href="{{ url_for('add_web_job', job_id=application.id) }}">Add</a> |#}
+{#                    <td>#}
+{#                </tr>#}
+{#                {% endfor %}#}
+{#            </tbody>#}
+{#        </table>#}
+{##}
+{#        <div>#}
+{#            <ul class="pagination justify-content-center">#}
+{#                <li class="page-item disabeled"><a class="page-link" href="{{ url_for('view', page=applications.prev_num) }}">Previous</a></li>#}
+{#                <li class="page-item active"><a class="page-link" href="{{ url_for('view') }}">{{ applications.page }}</a></li>#}
+{#                <li class="page-item"><a class="page-link" href="{{ url_for('view', page=applications.next_num) }}">Next</a></li>#}
+{#                <li class="page-item"><a class="page-link" href="{{ url_for('view', page=applications.pages) }}">Last</a></li>#}
+{##}
+{#            </ul>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+{##}
+{#{% endblock %}#}
+{#    <script src="../static/js/bootstrap.bundle.min.js"></script>#}
+{#</body>#}
+{#</html>#}
