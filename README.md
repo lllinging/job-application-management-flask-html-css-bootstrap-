@@ -25,4 +25,4 @@ This is a web application built using Flask, HTML, CSS, and Bootstrap to help us
 - **Database**: MySQL
 
 ### Project starts
-    启动 app.py
+    python app.py
